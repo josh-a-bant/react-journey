@@ -1,0 +1,22 @@
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(203, 214, 246);
+  color: black;
+}
+
+.user-title {
+  font-size: 1.2rem;
+}
+
+#user-img {
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+}
+
+.user-details {
+  font-size: 1.2rem;
+}
