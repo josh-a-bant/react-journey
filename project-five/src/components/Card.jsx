@@ -1,9 +1,8 @@
-
-
 const Card = (props) => {
   return (
     <div>
-      <p>{props.text}</p>
+      <input type="text" onChange={(e) => props.setText(e.target.value)}/>
+      <p>inside child component : {props.text}</p>
     </div>
   )
 }
