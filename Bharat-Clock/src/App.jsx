@@ -1,10 +1,16 @@
-import { useState } from "react";
 import "./App.css";
+import Heading from "./components/Heading";
+import Para from "./components/Para";
+import Time from "./components/Time";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <>Hello </>;
+  return (
+    <>
+      <Heading></Heading>
+      <Para></Para>
+      <Time></Time>
+    </>
+  );
 }
 
 export default App;
