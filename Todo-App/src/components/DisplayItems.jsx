@@ -1,28 +1,18 @@
-import React from "react";
+import { useContext } from "react";
 import style from "../assets/css/DisplayItems.module.css";
+import { TodoItems } from "../store/TodoItems";
 
 const DisplayItems = () => {
-  const items = [
-    {
-      task: "Anniversary",
-      dueDate: "25/08/2017",
-    },
-    {
-      task: "Buy Milk",
-      dueDate: "11/08/2017",
-    },
-    {
-      task: "Home Work",
-      dueDate: "11/08/2017",
-    },
-  ];
+  const { todoItems, removeTask } = useContext(TodoItems);
   return (
     <div>
-      {items.map((item) => (
+      {todoItems.map((item) => (
         <div key={item.task} className={style.displayContainer}>
           <div>{item.task}</div>
           <div>{item.dueDate}</div>
-          <button className={style.btn}>Remove</button>
+          <button className={style.btn} onClick={() => removeTask(item.task)}>
+            Remove
+          </button>
         </div>
       ))}
     </div>
