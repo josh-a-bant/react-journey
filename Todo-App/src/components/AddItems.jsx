@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import style from "../assets/css/AddItems.module.css";
 import { useState } from "react";
-import { TodoItems } from "../store/TodoItems";
+import { TodoItemsContext } from "../store/TodoItems";
 
 const AddItems = () => {
-  const { addNewTask } = useContext(TodoItems);
+  const { addNewItemAction } = useContext(TodoItemsContext);
   const [task, SetTask] = useState("");
   const [date, SetDate] = useState("");
 
@@ -17,7 +17,7 @@ const AddItems = () => {
   }
 
   function addTask(newTask, newDate) {
-    addNewTask(newTask, newDate);
+    addNewItemAction(newTask, newDate);
     SetTask("");
     SetDate("");
   }
