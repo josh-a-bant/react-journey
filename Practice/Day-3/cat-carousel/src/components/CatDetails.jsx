@@ -1,5 +1,3 @@
-import React from "react";
-
 const CatDetails = ({ labels, value }) => {
   return (
     <div className="flex h-8">

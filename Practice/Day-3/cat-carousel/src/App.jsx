@@ -1,46 +1,31 @@
-import "./App.css";
-import Card from "./components/Card";
+import { useState } from "react";
+import { MdKeyboardArrowLeft } from "react-icons/md";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
-const CATS = [
-  {
-    name: "Winnifred",
-    age: 10,
-    breed: "Scottish Fold",
-    location: "Queens, NY",
-    imageUrl: "https://static-task-assets.react-formula.com/378212.jpg",
-  },
-  {
-    name: "Abby",
-    age: 4,
-    breed: "Abysinnian",
-    location: "Charleston, WV",
-    imageUrl: "https://static-task-assets.react-formula.com/470756.jpg",
-  },
-  {
-    name: "Simon",
-    age: 2,
-    breed: "Siamese",
-    location: "Seattle, WA",
-    imageUrl: "https://static-task-assets.react-formula.com/130714.jpg",
-  },
-  {
-    name: "Marcus",
-    age: 5,
-    breed: "Maine Coon",
-    location: "Bar Harbor, ME",
-    imageUrl: "https://static-task-assets.react-formula.com/010338.jpg",
-  },
-  {
-    name: "Penelope",
-    age: 6,
-    breed: "Persian",
-    location: "Tuscon, AZ",
-    imageUrl: "https://static-task-assets.react-formula.com/774965.jpg",
-  },
-];
+import Card from "./components/Card";
+import Buttons from "./components/Buttons";
+import CATS from "./assets/cats";
+
+import "./App.css";
 
 function App() {
-  return <Card CATS={CATS} />;
+  const [catIdx, setCatIdx] = useState(2);
+  return (
+    <div className="mt-8 flex justify-center items-center">
+      <Buttons show={catIdx > 0} onClick={() => setCatIdx(catIdx - 1)}>
+        <MdKeyboardArrowLeft className="text-4xl" />
+      </Buttons>
+
+      <Card cat={CATS[catIdx]} />
+
+      <Buttons
+        show={catIdx < CATS.length - 1}
+        onClick={() => setCatIdx(catIdx + 1)}
+      >
+        <MdKeyboardArrowRight className="text-4xl" />
+      </Buttons>
+    </div>
+  );
 }
 
 export default App;
