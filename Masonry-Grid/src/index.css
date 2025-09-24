@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.overlay {
+  @apply after:content-[''] after:absolute after:bg-black after:opacity-0 after:w-full after:h-full after:inset-0 hover:after:opacity-90 after:transition-all after:duration-200;
+}
