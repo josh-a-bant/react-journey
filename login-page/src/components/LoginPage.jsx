@@ -23,7 +23,7 @@ const LoginPage = () => {
         </h1>
         <p className="text-sm text-neutral-600/70 text-center mb-5 tracking-tight">
           Don't have an account?
-          <span className="text-neutral-400">Sign up</span>
+          <span className="text-neutral-400"> Sign up</span>
         </p>
       </header>
 
