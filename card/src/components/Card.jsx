@@ -7,7 +7,7 @@ const Card = ({ card }) => {
       >
         <Icon />
       </div>
-      <h2 className="font-semibold text-lg">{card.title}</h2>
+      <h2 className="font-semibold text-md">{card.title}</h2>
       <p className="text-sm text-gray-500">{card.description}</p>
     </div>
   );
