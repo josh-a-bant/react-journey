@@ -2,7 +2,9 @@ const Navbar = () => {
   return (
     <nav className="w-full bg-violet-900 text-violet-100 px-4 py-2">
       <div className="flex justify-between items-center max-w-6xl mx-auto">
-        <div className="text-sm md:text-xl">Todo-App</div>
+        <div className="text-sm md:text-xl">
+          <span className="text-xs md:text-base">my</span>TODO
+        </div>
         <ul className="flex gap-4 md:gap-6 list-none ">
           <li className="cursor-pointer text-sm md:text-base hover:scale-110 hover:text-white transform transition-all duration-200">
             Home
