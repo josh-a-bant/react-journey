@@ -3,9 +3,13 @@
 
 @theme {
   --font-michroma: "Michroma", sans-serif;
+  --font-inter: "Inter", sans-serif;
 }
 
 .circle {
   @apply bg-white size-1 rounded-full;
 }
 
+.line {
+  @apply h-4 w-px bg-white;
+}

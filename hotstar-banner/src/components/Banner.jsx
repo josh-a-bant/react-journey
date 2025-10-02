@@ -2,10 +2,10 @@ import React from "react";
 
 const Banner = () => {
   return (
-    <div className="h-screen max-w-6xl mx-auto text-white bg-gray-950 relative overflow-hidden">
+    <div className="h-screen max-w-6xl mx-auto bg-gray-950 relative overflow-hidden">
       <img
         src="/ss.jpg"
-        className="h-[550px] w-full object-center mask-b-from-70% mask-l-from-10% opacity-70 "
+        className="h-[550px] w-full object-center mask-b-from-70% mask-l-from-10% opacity-70"
         alt="hitman"
       />
       <div className="absolute z-10 top-15 ml-10 max-w-lg">
@@ -16,51 +16,45 @@ const Banner = () => {
           <h1 className="font-extrabold text-5xl text-shadow-sm text-shadow-white tracking-wide text-red-500 font-michroma">
             AGENT 47
           </h1>
-          <p className="text-blue-500 mt-4">Newly Added</p>
+          <p className="text-blue-500 mt-4 font-inter">Newly Added</p>
         </div>
-        <div className="mt-8">
+        <div className="mt-8 font-inter">
           <ul className="flex gap-2 items-center text-neutral-300">
-            <li className="font-bold">2015</li>
+            <li className="font-semibold">2015</li>
             <li>
               <div className="circle"></div>
             </li>
-            <li className="font-bold">U/A 16+</li>
+            <li className="font-semibold">U/A 16+</li>
             <li>
               <div className="circle"></div>
             </li>
-            <li className="font-bold">1h 32m</li>
+            <li className="font-semibold">1h 32m</li>
             <li>
               <div className="circle"></div>
             </li>
-            <li className="font-bold">English</li>
+            <li className="font-semibold">English</li>
           </ul>
         </div>
-        <div className="mt-8 max-w-sm">
-          <p className="text-gray-300 tracking-tight">
+        <div className="mt-8 max-w-sm font-inter">
+          <p className="text-gray-300 tracking-tight text-sm font-semibold">
             47, an elite assassin, has his sights trained on a mega-corporation
             that plans to unlock the secret of Agent 47's past and create an
             army of killers.
           </p>
         </div>
-        <div className="mt-8">
-          <ul className="flex gap-2 items-center text-xl text-neutral-200">
+        <div className="mt-8 font-inter">
+          <ul className="flex gap-2 items-center text-base text-neutral-200">
             <li className="font-bold">Action</li>
-            <li>
-              <div className="bg-white"></div>
-            </li>
+            <li className="line"></li>
             <li className="font-bold">Conspiracy</li>
-            <li>
-              <div className="bg-white"></div>
-            </li>
+            <li className="line"></li>
             <li className="font-bold">Hitman</li>
-            <li>
-              <div className="bg-white"></div>
-            </li>
+            <li className="line"></li>
             <li className="font-bold">Assassination</li>
           </ul>
         </div>
-        <div className="flex gap-4 mt-8 items-center">
-          <button className="px-14 py-4 rounded-xl flex gap-2 hover:scale-105 bg-gradient-to-r from-indigo-700 from-60% to-pink-600 font-bold tracking-wide text-xl">
+        <div className="flex gap-4 mt-8 items-center font-inter">
+          <button className="px-14 py-4 rounded-xl flex gap-2 hover:scale-105 bg-gradient-to-r from-indigo-700 from-60% to-pink-600 font-bold tracking-wide text-base text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width={24}
@@ -74,7 +68,7 @@ const Banner = () => {
             </svg>
             Subscribe to Watch
           </button>
-          <button className="p-4 border rounded-xl text-xl bg-opacity-50 hover:bg-opacity-100 cursor-pointer hover:bg-">
+          <button className="p-4 border rounded-xl text-xl cursor-pointer text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width={24}
