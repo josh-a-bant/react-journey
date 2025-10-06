@@ -1,13 +1,17 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, NavLink } from "react-router-dom";
 
-const Vehicle = () => {
+const Vehicle = ({ navLinkStyles }) => {
   return (
     <div>
       <h1>Vehicles Page</h1>
       <nav>
-        <Link to="/vehicle/car">Cars</Link>{" "}
-        <Link to="/vehicle/bike">Bikes</Link>
+        <NavLink style={navLinkStyles} to="/vehicle/car">
+          Cars
+        </NavLink>{" "}
+        <NavLink style={navLinkStyles} to="/vehicle/bike">
+          Bikes
+        </NavLink>
       </nav>
       <Outlet />
     </div>
