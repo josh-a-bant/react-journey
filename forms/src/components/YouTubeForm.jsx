@@ -4,7 +4,7 @@ const YouTubeForm = () => {
   const {
     register,
     handleSubmit,
-    watch,
+    setError,
     formState: { errors, isSubmitting },
   } = useForm();
 
@@ -17,8 +17,12 @@ const YouTubeForm = () => {
   };
 
   const onSubmit = async (data) => {
-    await delay(3);
+    await delay(2);
     console.log(data);
+
+    if (data.username === "amit" || data.username === "kanhu") {
+      setError("myForm", { message: "This user is blocked" });
+    }
   };
 
   return (
@@ -47,7 +51,7 @@ const YouTubeForm = () => {
 
         <label htmlFor="password">
           Password{" "}
-          {errors.username && (
+          {errors.password && (
             <span className="text-red-500 text-xs">
               {errors.password.message}
             </span>
@@ -60,7 +64,6 @@ const YouTubeForm = () => {
           {...register("password", {
             required: { value: true, message: "password is required" },
             minLength: { value: 5, message: "min length of password is 5" },
-            maxLength: { value: 8, message: "max length of password is 8" },
           })}
         />
 
@@ -70,6 +73,9 @@ const YouTubeForm = () => {
           value="Submit"
           className="border mt-4 bg-gray-400"
         />
+        {errors.myForm && (
+          <span className="text-red-500 text-xs">{errors.myForm.message}</span>
+        )}
       </form>
     </div>
   );
