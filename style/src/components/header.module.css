@@ -1,0 +1,28 @@
+.test {
+  color: white;
+  background: rgb(195, 0, 0);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+}
+
+.mybutton {
+  padding: 10px 20px;
+  border: 1px solid;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 5px;
+  margin-top: 10px;
+}
+
+.primary {
+  composes: mybutton;
+  background-color: #007bff;
+  color: white;
+}
+
+.secondary {
+  composes: mybutton;
+  background-color: #6c757d;
+  color: white;
+}
