@@ -4,65 +4,72 @@ const YouTubeForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    watch,
+    formState: { errors, isSubmitting },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log("form submitted", data);
+  const delay = (d) => {
+    return new Promise((res, rej) => {
+      setTimeout(() => {
+        res();
+      }, d * 1000);
+    });
   };
+
+  const onSubmit = async (data) => {
+    await delay(3);
+    console.log(data);
+  };
+
   return (
     <div className="max-w-md mx-auto mt-10">
+      {isSubmitting && <div>loading...</div>}
+
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
         <label htmlFor="username">
-          Usernam
-          <span className="text-red-500 text-xs ml-2">
-            {errors.username?.message}
-          </span>
+          User Name{" "}
+          {errors.username && (
+            <span className="text-red-500 text-xs">
+              {errors.username.message}
+            </span>
+          )}
         </label>
-
         <input
           type="text"
-          className="border rounded-md"
-          {...register("username", { required: "username is required" })}
-        />
-
-        <label htmlFor="email" className="mt-5">
-          E-mail
-        </label>
-        <input
-          type="email"
-          className="border rounded-md"
-          {...register("email", {
-            pattern: {
-              value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-              message: "invalid email",
-            },
-            validate: {
-              notAccepted: (fieldValue) => {
-                return fieldValue !== "jk@gmail.com" || "Enter different email";
-              },
-              badDomain: (fieldValue) => {
-                return (
-                  !fieldValue.endsWith("baddomain.com") ||
-                  "this domain not supported"
-                );
-              },
-            },
+          className="border"
+          placeholder="enter username"
+          {...register("username", {
+            required: { value: true, message: "username is required" },
+            minLength: { value: 3, message: "min length is 3" },
+            maxLength: { value: 8, message: "max length is 8" },
           })}
         />
-        <p className="text-red-500 text-sm">{errors.email?.message}</p>
 
-        <label htmlFor="channel" className="mt-5">
-          Channel
+        <label htmlFor="password">
+          Password{" "}
+          {errors.username && (
+            <span className="text-red-500 text-xs">
+              {errors.password.message}
+            </span>
+          )}
         </label>
         <input
-          type="text"
-          className="border rounded-md"
-          {...register("channel", { required: "channel name is required" })}
+          type="password"
+          className="border"
+          placeholder="enter password"
+          {...register("password", {
+            required: { value: true, message: "password is required" },
+            minLength: { value: 5, message: "min length of password is 5" },
+            maxLength: { value: 8, message: "max length of password is 8" },
+          })}
         />
-        <p className="text-red-500 text-sm">{errors.channel?.message}</p>
 
-        <input type="submit" className="border mt-5 rounded-md " />
+        <input
+          disabled={isSubmitting}
+          type="submit"
+          value="Submit"
+          className="border mt-4 bg-gray-400"
+        />
       </form>
     </div>
   );
