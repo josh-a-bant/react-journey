@@ -31,8 +31,8 @@ function App() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center gap-8 h-screen">
-      <p className="text-4xl text-neutral-700">count: {count}</p>
+    <div className="flex flex-col items-center justify-center gap-4 h-screen">
+      <p className="text-xl text-neutral-700">count: {count}</p>
       <div className="flex gap-2 items-center">
         <button
           className="size-8 bg-amber-200 border text-2xl"
