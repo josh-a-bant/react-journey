@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const PasswordGenerator = () => {
   const [length, setLength] = useState(8);
@@ -6,6 +6,8 @@ const PasswordGenerator = () => {
   const [characterAllowed, setCharacterAllowed] = useState(false);
 
   const [password, setPassword] = useState("");
+
+  const passwordRef = useRef();
 
   const generatePassword = useCallback(() => {
     let pass = "";
@@ -24,7 +26,12 @@ const PasswordGenerator = () => {
 
   useEffect(() => {
     generatePassword();
-  }, [length, numberAllowed, characterAllowed]);
+  }, [length, numberAllowed, characterAllowed, generatePassword]);
+
+  const copyPassword = useCallback(() => {
+    passwordRef.current.select();
+    window.navigator.clipboard.writeText(password);
+  }, [password]);
 
   return (
     <div className="border rounded-2xl p-8 flex flex-col gap-4 justify-center items-center">
@@ -34,10 +41,14 @@ const PasswordGenerator = () => {
           type="text"
           placeholder="Password"
           readOnly
-          className="focus:outline-none text-2xl bg-white w-sm p-1 text-black"
+          className="focus:outline-none text-2xl bg-white w-sm px-2 py-1 text-black"
           value={password}
+          ref={passwordRef}
         />
-        <button className="bg-neutral-900 py-1 px-2 text-2xl text-neutral-200 cursor-pointer hover:bg-neutral-500 hover:text-neutral-900">
+        <button
+          className="bg-neutral-900 py-1 px-2 text-2xl text-neutral-200 cursor-pointer hover:bg-neutral-500 hover:text-neutral-900"
+          onClick={copyPassword}
+        >
           Copy
         </button>
       </div>
