@@ -1,30 +1,30 @@
-# 🔐 Password Generator
+#  Password Generator
 
 A simple and customizable **Password Generator** built using **React** and **Tailwind CSS**.  
 It allows users to generate secure passwords based on their preferred length and character options.
 
 ---
 
-## 🚀 Features
+##  Features
 
-- 🎚️ Adjustable **password length** using a slider
-- 🔢 Option to include **numbers**
-- 🔣 Option to include **special characters**
-- 📋 One-click **Copy to Clipboard** feature
-- ⚡ Auto-generates new password when settings change
-- 📱 Clean, responsive UI built with **Tailwind CSS**
-
----
-
-## 🧠 Tech Stack
-
-- ⚛️ **React.js**
-- 🎨 **Tailwind CSS**
-- 💡 **JavaScript (ES6+)**
+- Adjustable **password length** using a slider
+- Option to include **numbers**
+- Option to include **special characters**
+- One-click **Copy to Clipboard** feature
+- Auto-generates new password when settings change
+- Clean, responsive UI built with **Tailwind CSS**
 
 ---
 
-## 🪝 Hooks Used
+##  Tech Stack
+
+-  **React.js**
+-  **Tailwind CSS**
+-  **JavaScript (ES6+)**
+
+---
+
+##  Hooks Used
 
 Your Password Generator uses several **React Hooks** to manage state, side effects, and performance optimizations:
 
@@ -37,7 +37,7 @@ Your Password Generator uses several **React Hooks** to manage state, side effec
 
 ---
 
-## 🧩 How It Works
+##  How It Works
 
 1. Set the desired **length** of your password using the range slider.
 2. Toggle **Number** or **Character** checkboxes as per your need.
