@@ -21,7 +21,7 @@ function App() {
 
   return (
     <ThemeProvider value={{ theme, light, dark }}>
-      <div className="bg-neutral-300 dark:bg-neutral-500 h-screen flex justify-center items-center flex-col">
+      <div className="bg-neutral-100 dark:bg-neutral-950 h-screen flex justify-center items-center flex-col">
         <Button />
       </div>
     </ThemeProvider>
