@@ -11,13 +11,13 @@ export class AuthService {
       .setEndpoint(config.appwriterUrl)
       .setProject(config.appwriterProjectId);
 
-    this.account = new Account(this.account);
+    this.account = new Account(this.client);
   }
 
   async createAccount({ email, password, name }) {
     try {
       const userAccount = await this.account.create(
-        ID.unique(),
+        // ID.unique(),
         email,
         password,
         name
