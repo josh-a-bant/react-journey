@@ -1,7 +1,9 @@
 import "./App.css";
+import { Button } from "./Button";
+import { Welcome } from "./Welcome";
 
-function Welcome() {
-  return <h2>Lorem ipsum dolor sit amet.</h2>;
+function Component3() {
+  return <h3>Lorem ipsum dolor sit amet.</h3>;
 }
 
 function App() {
@@ -9,6 +11,8 @@ function App() {
     <>
       <h1>Lorem ipsum dolor sit amet.</h1>
       <Welcome />
+      <Component3 />
+      <Button />
     </>
   );
 }
