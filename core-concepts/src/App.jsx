@@ -17,7 +17,7 @@ function App() {
 
       <Alert type="success">Success</Alert>
       <Alert type="failure">Failure</Alert>
-      <Button>Like</Button>
+      <Button name="JK">Like</Button>
     </>
   );
 }

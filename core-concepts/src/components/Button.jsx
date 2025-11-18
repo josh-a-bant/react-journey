@@ -1,10 +1,9 @@
-const Button = ({ children }) => {
-  const name = "JK";
-  function handleClick() {
+const Button = ({ children, name }) => {
+  function handleClick(name) {
     alert(`Thanks for ${children}, ${name}`);
   }
 
-  return <button onClick={handleClick}>{children}</button>;
+  return <button onClick={() => handleClick(name)}>{children}</button>;
 };
 
 export default Button;
