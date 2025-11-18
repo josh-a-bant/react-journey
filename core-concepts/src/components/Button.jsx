@@ -1,7 +1,7 @@
 const Button = ({ children, name }) => {
-  function handleClick(name) {
+  const handleClick = (name) => {
     alert(`Thanks for ${children}, ${name}`);
-  }
+  };
 
   return <button onClick={() => handleClick(name)}>{children}</button>;
 };
