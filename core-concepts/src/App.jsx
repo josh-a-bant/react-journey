@@ -16,7 +16,8 @@ function App() {
       <Component3 />
       <Button /> */}
 
-      <Alert type="success">JK</Alert>
+      <Alert type="success">success</Alert>
+      <Alert type="failure">failure</Alert>
     </>
   );
 }

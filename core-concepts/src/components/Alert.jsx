@@ -1,17 +1,6 @@
-import React from "react";
-
+import style from "./Alert.module.css";
 const Alert = ({ children, type }) => {
-  return (
-    <div
-      style={{
-        color: "white",
-        borderRadius: "8px",
-        backgroundColor: type === "success" ? "green" : "red",
-      }}
-    >
-      {children}
-    </div>
-  );
+  return <div className={`${style.alert} ${style[type]}`}>{children}</div>;
 };
 
 export default Alert;
