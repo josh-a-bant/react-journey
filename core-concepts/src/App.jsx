@@ -1,5 +1,5 @@
 import "./App.css";
-import { Button } from "./Button";
+import Button from "./components/Button";
 import Alert from "./components/Alert";
 import { Welcome } from "./Welcome";
 
@@ -15,9 +15,9 @@ function App() {
       <Component3 />
       <Button /> */}
 
-      <Alert type="success">success</Alert>
-      <Alert type="failure">failure</Alert>
-      <button>Submit</button>
+      <Alert type="success">Success</Alert>
+      <Alert type="failure">Failure</Alert>
+      <Button>Like</Button>
     </>
   );
 }
