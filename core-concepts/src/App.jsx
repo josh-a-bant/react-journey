@@ -10,7 +10,6 @@ function Component3() {
 function App() {
   return (
     <>
-      <h1>Hi</h1>
       {/* <h1>Lorem ipsum dolor sit amet.</h1>
       <Welcome />
       <Component3 />
@@ -18,6 +17,7 @@ function App() {
 
       <Alert type="success">success</Alert>
       <Alert type="failure">failure</Alert>
+      <button>Submit</button>
     </>
   );
 }
