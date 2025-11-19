@@ -8,6 +8,10 @@ function Component3() {
 }
 
 function App() {
+  const handleClick = (name) => {
+    alert(`Thanks for Like, ${name}`);
+  };
+
   return (
     <>
       {/* <h1>Lorem ipsum dolor sit amet.</h1>
@@ -17,7 +21,9 @@ function App() {
 
       <Alert type="success">Success</Alert>
       <Alert type="failure">Failure</Alert>
-      <Button name="JK">Like</Button>
+      <Button name="JK" click={handleClick}>
+        Like
+      </Button>
     </>
   );
 }
