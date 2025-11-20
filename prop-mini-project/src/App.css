@@ -2,21 +2,24 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "helvetica neue";
+  /* font-family: "helvetica neue"; */
 }
 
 .container {
   min-height: 100vh;
   padding: 20px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  background-color: rgb(239, 239, 239);
+  gap: 10px;
+  background-color: #222;
 }
 
 .card {
-  height: 280px;
-  width: 250px;
-  background-color: white;
+  height: 320px;
+  width: 280px;
+  background-color: #fff;
   padding: 20px;
   border-radius: 30px;
   display: flex;
@@ -27,11 +30,11 @@
 .header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .header img {
-  height: 40px;
-  width: 40px;
+  height: 42px;
+  width: 42px;
   border-radius: 50%;
   border: 1px solid #dadada;
   padding: 3px;
@@ -62,7 +65,7 @@
 
 .main h3 span {
   margin-left: 3px;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 400;
   color: #aeaeae;
 }
@@ -100,7 +103,7 @@
 
 .footer .location {
   margin-top: 5px;
-  font-size: 9px;
+  font-size: 10px;
   color: #aeaeae;
 }
 
