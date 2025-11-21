@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className=" flex justify-between items-center p-8">
+    <div className=" flex justify-between items-center py-4 px-14">
       <div className="bg-neutral-900 text-white px-4 py-1 rounded-full uppercase text-sm">
         Target Audience
       </div>

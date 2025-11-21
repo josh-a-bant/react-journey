@@ -1,14 +1,14 @@
 import Header from "./Header";
 import Main from "./Main";
 
-const HomePage = () => {
+const HomePage = ({ users }) => {
   return (
     <div>
       <h1 className="bg-yellow-400 text-white text-center text-3xl">
         JK - Jagannath
       </h1>
       <Header />
-      <Main />
+      <Main users={users} />
     </div>
   );
 };
