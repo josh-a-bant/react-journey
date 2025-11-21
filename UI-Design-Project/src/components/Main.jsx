@@ -3,7 +3,7 @@ import LeftSide from "./LeftSide";
 
 const Main = ({ users }) => {
   return (
-    <div className="px-14 py-6 h-[85vh] flex gap-10">
+    <div className="px-14 py-2 h-[90vh] flex gap-10">
       <RightSide />
       <LeftSide users={users} />
     </div>
