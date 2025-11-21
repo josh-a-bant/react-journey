@@ -10,7 +10,10 @@ const CardContext = ({ user, id }) => {
       <div>
         <p className="text-white mb-10 text-shadow-md">{user.intro}</p>
         <div className="flex justify-between">
-          <button className="text-white bg-blue-600 rounded-full text-sm px-4 py-1 font-semibold cursor-pointer">
+          <button
+            style={{ backgroundColor: user.color }}
+            className="text-white bg-blue-600 rounded-full text-sm px-4 py-1 font-semibold cursor-pointer"
+          >
             {user.tag}
           </button>
           <ArrowRight size={30} className="text-white" />
