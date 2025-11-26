@@ -2,15 +2,16 @@ import "./App.css";
 import Button from "./components/Button";
 import Alert from "./components/Alert";
 import { Welcome } from "./Welcome";
+import Console from "./components/Console";
 
 function Component3() {
   return <h3>Lorem ipsum dolor sit amet.</h3>;
 }
 
 function App() {
-  const handleClick = (name) => {
-    alert(`Thanks for Like, ${name}`);
-  };
+  // const handleClick = (name) => {
+  //   alert(`Thanks for Like, ${name}`);
+  // };
 
   return (
     <>
@@ -19,11 +20,12 @@ function App() {
       <Component3 />
       <Button /> */}
 
-      <Alert type="success">Success</Alert>
+      {/* <Alert type="success">Success</Alert>
       <Alert type="failure">Failure</Alert>
       <Button name="JK" click={handleClick}>
         Like
-      </Button>
+      </Button> */}
+      <Console />
     </>
   );
 }
