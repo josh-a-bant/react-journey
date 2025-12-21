@@ -1,5 +1,6 @@
 import { useState } from "react";
 import QueueForm from "./components/QueueForm";
+import QueueDisplay from "./components/QueueDisplay";
 
 function App() {
   const [queue, setQueue] = useState([]);
@@ -31,7 +32,11 @@ function App() {
 
       <main className="flex gap-2 mt-4 justify-center">
         <QueueForm addToQueue={addToQueue} />
-        <h2>quue Display</h2>
+        <QueueDisplay
+          queue={queue}
+          updateStatus={updateStatus}
+          removeFromQueue={removeFromQueue}
+        />
       </main>
     </>
   );

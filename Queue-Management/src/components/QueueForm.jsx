@@ -18,7 +18,7 @@ const QueueForm = ({ addToQueue }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col items-center gap-4 border p-4"
+      className="flex flex-col items-center gap-4 border p-4 max-h-fit"
     >
       <h2>Queue Form</h2>
       <div>
