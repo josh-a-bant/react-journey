@@ -4,9 +4,21 @@ import QueueForm from "./components/QueueForm";
 function App() {
   const [queue, setQueue] = useState([]);
 
-  const addToQueue = (customer) => {};
-  const updateStatus = (id, newStatus) => {};
-  const removeFromQueue = (id) => {};
+  const addToQueue = (customer) => {
+    setQueue([...queue, { ...customer, id: Date.now(), status: "waiting" }]);
+  };
+
+  const updateStatus = (id, newStatus) => {
+    setQueue(
+      queue.map((customer) =>
+        customer.id === id ? { ...customer, status: newStatus } : customer
+      )
+    );
+  };
+
+  const removeFromQueue = (id) => {
+    setQueue(queue.filter((customer) => customer.id !== id));
+  };
 
   return (
     <>
