@@ -42,6 +42,8 @@ function App() {
           A comprehensive guide to understanding props in react
         </p>
       </header>
+
+      <BasicProps />
     </div>
   );
 }
