@@ -9,7 +9,8 @@ export async function fetchImage(query, page = 1, per_page = 20) {
     params: { query, page, per_page },
     headers: { Authorization: `Client-ID ${UNSPLASH_KEY}` },
   });
-  console.log(res.data.results);
+  // console.log(res.data.results);
+  return res.data.results;
 }
 
 export async function fetchVideos(query) {
@@ -18,7 +19,7 @@ export async function fetchVideos(query) {
     headers: { Authorization: PEXELS_KEY },
   });
 
-  console.log(res.data.videos);
+  return res.data.videos;
 }
 
 export async function fetchGIF(query, limit = 20) {
@@ -26,5 +27,5 @@ export async function fetchGIF(query, limit = 20) {
     params: { q: query, key: TENOR_KEY, client_key: "my_react_app", limit },
   });
 
-  console.log(res.data.results);
+  return res.data.results;
 }
