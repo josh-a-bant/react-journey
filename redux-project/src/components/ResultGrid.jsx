@@ -4,53 +4,78 @@ import {
   setLoading,
   setError,
   setResults,
-  setQuery,
 } from "../redux/features/searchSlice";
 import { useDispatch, useSelector } from "react-redux";
+import ResultCard from "./ResultCard";
 
 const ResultGrid = () => {
   const { query, activeTab, reults, loading, error } = useSelector(
     (store) => store.search,
   );
 
-  useEffect(() => {
-    const getData = async () => {
-      let data;
-      if (activeTab == "photos") {
-        let response = await fetchImage(query);
-        data = response.map((item) => ({
-          id: item.id,
-          type: "photo",
-          title: item.alt_description,
-          thumbnail: item.urls.small,
-          src: item.urls.full,
-        }));
-      }
-      if (activeTab == "videos") {
-        let response = await fetchVideos(query);
-        data = response.map((item) => ({
-          id: item.id,
-          type: "video",
-          thumbnail: item.image,
-          src: item.url,
-        }));
-      }
-      if (activeTab == "gifs") {
-        let response = await fetchGIF(query);
-        data = response.map((item) => ({
-          id: item.id,
-          type: "gif",
-          title: item.content_description,
-          src: item.url,
-        }));
-      }
+  const dispatch = useDispatch();
 
-      console.log(data);
+  useEffect(() => {
+    if (!query) return;
+    const getData = async () => {
+      try {
+        dispatch(setLoading());
+        let data = [];
+        if (activeTab == "photos") {
+          let response = await fetchImage(query);
+          console.log(response);
+          data = response.map((item) => ({
+            id: item.id,
+            type: "photo",
+            title: item.alt_description,
+            thumbnail: item.urls.small,
+            src: item.urls.full,
+            url: item.links.html,
+          }));
+        }
+        if (activeTab == "videos") {
+          let response = await fetchVideos(query);
+          // console.log(response);
+          data = response.map((item) => ({
+            id: item.id,
+            type: "video",
+            thumbnail: item.image,
+            src: item.video_files[0].link,
+            title: item.user.name,
+            url: item.url,
+          }));
+        }
+        if (activeTab == "gifs") {
+          let response = await fetchGIF(query);
+          console.log(response);
+          data = response.map((item) => ({
+            id: item.id,
+            type: "gif",
+            title: item.content_description,
+            src: item.media_formats.gif.url,
+            thumbnail: item.media_formats.tinygif.url,
+            url: item.url,
+          }));
+          // console.log(response);
+        }
+
+        dispatch(setResults(data));
+      } catch (error) {
+        dispatch(setError(error));
+      }
     };
     getData();
   }, [query, activeTab]);
 
-  return <div></div>;
+  if (error) return <h1>Error</h1>;
+  if (loading) return <h1>Loading</h1>;
+  return (
+    <div className="flex justify-between w-full flex-wrap gap-3 overflow-auto py-5 px-10">
+      {reults.map((item, idx) => {
+        return <ResultCard item={item} key={idx} />;
+      })}
+    </div>
+  );
 };
 
 export default ResultGrid;
