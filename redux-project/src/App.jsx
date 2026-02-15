@@ -1,15 +1,14 @@
-// import { fetchGIF, fetchImage, fetchVideos } from "./api/mediaApi";
-import ResultGrid from "./components/ResultGrid";
-import SearchBar from "./components/SearchBar";
-import Tabs from "./components/Tabs";
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import CollectionPage from "./pages/CollectionPage";
 
 function App() {
   return (
     <div>
-      <SearchBar />
-
-      <Tabs />
-      <ResultGrid />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/collection" element={<CollectionPage />} />
+      </Routes>
     </div>
   );
 }
