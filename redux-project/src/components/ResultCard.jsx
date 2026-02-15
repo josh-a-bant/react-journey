@@ -7,7 +7,7 @@ const ResultCard = ({ item }) => {
     const newData = [...oldData, item];
 
     localStorage.setItem("colllection", JSON.stringify(newData));
-    console.log(oldData);
+    console.log(newData);
   };
 
   return (
