@@ -67,8 +67,10 @@ const ResultGrid = () => {
     getData();
   }, [query, activeTab, dispatch]);
 
-  if (error) return <h1>Error</h1>;
-  if (loading) return <h1>Loading</h1>;
+  if (error)
+    return <h3 className="text-(--c4) text-4xl text-center py-5">Error</h3>;
+  if (loading)
+    return <h3 className="text-(--c4) text-4xl text-center py-5">Loading</h3>;
   return (
     <div className="flex justify-between w-full flex-wrap gap-3 overflow-auto py-5 px-10">
       {reults.map((item, idx) => {

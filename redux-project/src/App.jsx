@@ -4,7 +4,7 @@ import CollectionPage from "./pages/CollectionPage";
 
 function App() {
   return (
-    <div>
+    <div className="bg-(--c1) min-h-screen">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/collection" element={<CollectionPage />} />

@@ -15,7 +15,7 @@ const SearchBar = () => {
   return (
     <>
       <form
-        className="px-10 py-5 flex gap-5"
+        className="px-10 py-5 flex gap-5 "
         onSubmit={(e) => submitHandler(e)}
       >
         <input
@@ -25,10 +25,10 @@ const SearchBar = () => {
           }}
           required
           type="text"
-          placeholder="search something"
-          className="border-2 outline-none text-xl px-3 py-1 rounded w-full"
+          placeholder="search anything..."
+          className="border-2 border-(--c4) outline-none text-xl px-3 py-1 rounded w-full"
         />
-        <button className="border-2 bg-neutral-300 active:scale-95 cursor-pointer text-xl rounded px-3 py-1">
+        <button className="border-2 bg-(--c4) active:scale-95 cursor-pointer text-xl rounded px-3 py-1 text-(--c1)">
           Search
         </button>
       </form>

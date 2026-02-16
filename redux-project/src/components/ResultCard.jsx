@@ -42,14 +42,14 @@ const ResultCard = ({ item }) => {
         )}
       </a>
       <div
-        className="flex justify-between gap-3 items-center w-full px-4 py-4 absolute bottom-0 text-white"
+        className="flex justify-between gap-3 items-center w-full px-4 py-4 absolute bottom-0 text-(--c1)"
         id="bottom"
       >
         <h2 className="text-xs font-semibold flex items-center capitalize h-14 overflow-hidden opacity-90">
           {item.title}
         </h2>
         <button
-          className="bg-indigo-600 active:scale-95 text-white rounded px-3 py-1 cursor-pointer font-semibold text-sm"
+          className="bg-(--c4) hover:bg-(--c1) active:scale-95 text-(--c1) hover:text-(--c4) rounded border border-(--c3) shadow-2xl px-3 py-1 cursor-pointer font-semibold text-sm"
           onClick={() => addToCollection(item)}
         >
           Save
