@@ -23,7 +23,7 @@ const ResultGrid = () => {
         let data = [];
         if (activeTab == "photos") {
           let response = await fetchImage(query);
-          console.log(response);
+          // console.log(response);
           data = response.map((item) => ({
             id: item.id,
             type: "photo",
@@ -47,7 +47,7 @@ const ResultGrid = () => {
         }
         if (activeTab == "gifs") {
           let response = await fetchGIF(query);
-          console.log(response);
+          // console.log(response);
           data = response.map((item) => ({
             id: item.id,
             type: "gif",
@@ -56,7 +56,6 @@ const ResultGrid = () => {
             thumbnail: item.media_formats.tinygif.url,
             url: item.url,
           }));
-          // console.log(response);
         }
 
         dispatch(setResults(data));

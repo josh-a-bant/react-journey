@@ -10,10 +10,7 @@ const HomePage = () => {
   // console.log(query);
 
   return (
-    <div>
-      <h1 className="text-4xl font-semibold py-5 px-10 bg-(--c4) text-(--c1)">
-        Media Search
-      </h1>
+    <div className="flex flex-col gap-5">
       <SearchBar />
 
       {query != "" ? (

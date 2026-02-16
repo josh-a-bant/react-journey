@@ -8,11 +8,11 @@ const Tabs = () => {
   const activeTab = useSelector((state) => state.search.activeTab);
 
   return (
-    <div className="flex px-10 py-5 gap-10">
+    <div className="flex px-10 gap-5">
       {tabs.map(function (elem, idx) {
         return (
           <button
-            className={`${activeTab == elem ? "bg-(--c4) text-(--c1)" : "text-(--c1) bg-(--c2)"} uppercase px-4 py-2 border-2 rounded cursor-pointer active:scale-95 `}
+            className={`${activeTab == elem ? "bg-(--c4) text-(--c1)" : "text-(--c1) bg-(--c2)"} uppercase px-3 py-1 border-2 rounded cursor-pointer active:scale-95 text-sm`}
             key={idx}
             onClick={() => {
               dispatch(setActiveTab(elem));
